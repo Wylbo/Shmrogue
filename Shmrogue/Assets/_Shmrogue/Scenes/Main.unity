@@ -485,7 +485,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-2140
+  m_Name: pb_Mesh-1158
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -649,6 +649,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2042689490989757365, guid: b1f885596a5004c46bc3c818696d309e,
+        type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 2042689490081176981, guid: b1f885596a5004c46bc3c818696d309e,
         type: 3}
       propertyPath: m_Mesh
@@ -719,10 +724,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2042689490989757365, guid: b1f885596a5004c46bc3c818696d309e,
+    - target: {fileID: 1412975667790452121, guid: b1f885596a5004c46bc3c818696d309e,
         type: 3}
-      propertyPath: m_Name
-      value: Player
+      propertyPath: InitialModule.startSize.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1412975667790452121, guid: b1f885596a5004c46bc3c818696d309e,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].value
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1412975667790452121, guid: b1f885596a5004c46bc3c818696d309e,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[3].value
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1412975667790452121, guid: b1f885596a5004c46bc3c818696d309e,
+        type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[5].value
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1f885596a5004c46bc3c818696d309e, type: 3}

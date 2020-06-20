@@ -1107,13 +1107,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c02837a694c32b64881a361164689c67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 15
+  maxSpeed: 30
   maxTilt: 25
   fireRate: 0.4
   missilePrefab: {fileID: 1142581004296825017, guid: 0ea613e25aa69474280b331b498e9e69,
     type: 3}
   gfx: {fileID: 2042689490081176977}
   cannonContainer: {fileID: 2042689490314924118}
+  controller: {fileID: 11400000, guid: 12a07234d63d94841a6d1ce8e93f26d3, type: 2}
 --- !u!1 &5276780296095427515
 GameObject:
   m_ObjectHideFlags: 0
@@ -1399,7 +1400,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
