@@ -10,9 +10,9 @@ using UnityEngine;
 
 namespace Com.MaxmilienGalea.SummerTime.Player {
     public class Player : MonoBehaviour {
-        [SerializeField] float maxSpeed = 0;
-        [SerializeField] float maxTilt = 0;
-        [SerializeField] float fireRate = 0;
+        [SerializeField] float m_maxSpeed = 0;
+        [SerializeField] float m_maxTilt = 0;
+        [SerializeField] float m_fireRate = 0;
         [SerializeField] GameObject missilePrefab = null;
         [SerializeField] Transform gfx = null;
         [SerializeField] Transform cannonContainer = null;
@@ -42,12 +42,11 @@ namespace Com.MaxmilienGalea.SummerTime.Player {
         private void GetInput() {
             velocity = controller.GetAxisClamped();
             mousePos = controller.GetMousePos();
-            Debug.Log(mousePos);
         }
 
 
         private void Move() {
-            transform.position += velocity * maxSpeed * Time.deltaTime;
+            transform.position += velocity * m_maxSpeed * Time.deltaTime;
             transform.DOMove(mousePos, .15f).SetEase(Ease.InOutCirc);
         }
 
@@ -60,7 +59,7 @@ namespace Com.MaxmilienGalea.SummerTime.Player {
             //}
 
             gfx.rotation = baseRotation;
-            gfx.rotation = Quaternion.LerpUnclamped(Quaternion.identity, Quaternion.AngleAxis(maxTilt, Vector3.Cross(toMouse,Vector3.up)), -Vector3.ClampMagnitude(toMouse,1).magnitude) * gfx.rotation;
+            gfx.rotation = Quaternion.LerpUnclamped(Quaternion.identity, Quaternion.AngleAxis(m_maxTilt, Vector3.Cross(toMouse,Vector3.up)), -Vector3.ClampMagnitude(toMouse,1).magnitude) * gfx.rotation;
 
             //cannonContainer.rotation = gfx.rotation * cannonContainer.rotation;
             //cannonContainer.rotation = Quaternion.LerpUnclamped(Quaternion.identity, Quaternion.AngleAxis(maxTilt, transform.right), -Input.GetAxis("Vertical"));
@@ -70,7 +69,7 @@ namespace Com.MaxmilienGalea.SummerTime.Player {
         private void Shoot() {
             elapsedTimeBtwShoot += Time.deltaTime;
 
-            if (elapsedTimeBtwShoot >= fireRate) {
+            if (elapsedTimeBtwShoot >= m_fireRate) {
                 foreach (Transform cannon in cannonContainer) {
                     Instantiate(missilePrefab, cannon.position, cannon.rotation);
 

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5769845180839779385}
   - component: {fileID: 6012074611051205966}
   - component: {fileID: 2760905487499866510}
-  - component: {fileID: 1328033792181143764}
   m_Layer: 0
   m_Name: Prism
   m_TagString: Untagged
@@ -258,20 +257,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 820028718745472883}
   m_Mesh: {fileID: 0}
---- !u!64 &1328033792181143764
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 820028718745472883}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}
 --- !u!1 &1142581004296825017
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,6 +267,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4404435671686916853}
   - component: {fileID: -7023417893053089824}
+  - component: {fileID: 8350799078011466280}
+  - component: {fileID: -1364317037488583032}
   m_Layer: 0
   m_Name: Missile
   m_TagString: Untagged
@@ -317,8 +304,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f59b41247ba93f142a95511d4b9a6704, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 50
-  lifeTime: 5
+  m_speed: 50
+  m_lifeTime: 5
+  m_damage: 1
+  m_onDieParticle: {fileID: 7319875981736347155, guid: e263aa235f1860b4f944b0a35ae2d1fd,
+    type: 3}
+--- !u!65 &8350799078011466280
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142581004296825017}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.59573436, y: 0.6048188, z: 1}
+  m_Center: {x: 0.0068134665, y: 0.0113556385, z: 0}
+--- !u!54 &-1364317037488583032
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142581004296825017}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &5795354914963542120
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,7 +350,7 @@ GameObject:
   - component: {fileID: 128127372942907242}
   - component: {fileID: 5820539835524911882}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
